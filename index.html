@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Breastfeeding Rights & Pumping Resources</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background-color: #FAF2E6;
+      font-family: Arial, sans-serif;
+      color: #002D72;
+      display: flex;
+      justify-content: center;
+    }
+
+    .page-wrapper {
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .resource-card {
+      border: none;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 280px;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      color: #002D72;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      font: inherit;
+    }
+
+    .resource-card:focus-visible {
+      outline: 3px solid #002D72;
+      outline-offset: 2px;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    }
+
+    .resource-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+    }
+
+    .resource-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    /* Individual card background colors */
+    .bg-cdph { background-color: #F8B8B8; }
+    .bg-dol { background-color: #FFDFA6; }
+    .bg-nih { background-color: #C9E7E7; }
+    .bg-wic-pumps { background-color: #B9D8A6; }
+    .bg-wic-pdf { background-color: #D8C6F0; }
+    .bg-myfamily { background-color: #FAD6B8; }
+
+    /* Modal styles */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal {
+      background: #ffffff;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 90%;
+      padding: 24px 24px 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      color: #002D72;
+      position: relative;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .modal p {
+      margin: 0 0 18px 0;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 8px 18px;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-secondary {
+      background: #E6E6E6;
+      color: #002D72;
+    }
+
+    .btn-primary {
+      background: #002D72;
+      color: #FFFFFF;
+    }
+
+    .btn-secondary:hover {
+      background: #D4D4D4;
+    }
+
+    .btn-primary:hover {
+      background: #001947;
+    }
+
+    .modal-close-x {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #666666;
+    }
+
+    .modal-close-x:hover {
+      color: #000000;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 20px 10px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      .subtitle {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper" aria-labelledby="page-title">
+    <h1 id="page-title">Learn About Your Rights and Pumping Options</h1>
+    <p class="subtitle">
+      Explore trusted resources on breastfeeding rights, workplace pumping laws, and local support programs.
+      Select a card below to learn more and open the full resource.
+    </p>
+
+    <div class="card-grid">
+      <!-- CDPH -->
+      <button
+        class="resource-card bg-cdph"
+        data-title="CDPH – Employer Requirements"
+        data-description="California Department of Public Health guidance on workplace lactation accommodations and employer responsibilities."
+        data-url="https://www.cdph.ca.gov/Programs/CFH/DMCAH/Breastfeeding/Pages/Lactation-Accommodation-for-Employers.aspx"
+      >
+        <h3>CDPH – Employer Requirements</h3>
+        <p>California Department of Public Health guidance on workplace lactation accommodations and employer responsibilities.</p>
+      </button>
+
+      <!-- U.S. DOL -->
+      <button
+        class="resource-card bg-dol"
+        data-title="U.S. Department of Labor – Pump at Work FAQs"
+        data-description="Federal law details employee break time, privacy, and employer requirements under the PUMP Act."
+        data-url="https://www.dol.gov/agencies/whd/pump-at-work/faqs"
+      >
+        <h3>U.S. Department of Labor – Pump at Work FAQs</h3>
+        <p>Learn about federal protections for pumping at work, including break time, privacy, and employer responsibilities.</p>
+      </button>
+
+      <!-- NIH Study -->
+      <button
+        class="resource-card bg-nih"
+        data-title="NIH Research Article"
+        data-description="A systematic review of how workplace environments affect breastfeeding support and outcomes."
+        data-url="https://pmc.ncbi.nlm.nih.gov/articles/PMC8082937/"
+      >
+        <h3>NIH Research Article</h3>
+        <p>Review research on how workplace policies and environments influence breastfeeding success.</p>
+      </button>
+
+      <!-- WIC Pumps -->
+      <button
+        class="resource-card bg-wic-pumps"
+        data-title="WIC – Breast Pump Program"
+        data-description="San Bernardino County WIC program details on free and loaner breast pumps available for participants."
+        data-url="https://wic.sbcounty.gov/breastfeeding/breastpumps/"
+      >
+        <h3>WIC – Breast Pump Program</h3>
+        <p>Learn about free and loaner breast pumps available through San Bernardino County WIC.</p>
+      </button>
+
+      <!-- SBC WIC PDF -->
+      <button
+        class="resource-card bg-wic-pdf"
+        data-title="Inland Empire Breastfeeding Resources (PDF)"
+        data-description="Download the Inland Empire Breastfeeding Resources PDF with local clinics, support lines, and service locations."
+        data-url="https://wic.sbcounty.gov/wp-content/uploads/sites/89/2024/08/I.E.-Breastfeeding-Resources-8.24.pdf"
+      >
+        <h3>Inland Empire Resource Guide (PDF)</h3>
+        <p>Download a PDF with local breastfeeding support services, clinics, and hotlines.</p>
+      </button>
+
+      <!-- MyFamily WIC -->
+      <button
+        class="resource-card bg-myfamily"
+        data-title="MyFamily WIC Breastfeeding Support"
+        data-description="California WIC’s breastfeeding support and education page with resources for families and caregivers."
+        data-url="https://myfamily.wic.ca.gov/NutritionHealth/BreastfeedingSupport"
+      >
+        <h3>MyFamily WIC Support</h3>
+        <p>Explore California WIC breastfeeding education, videos, and support resources for families.</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <button class="modal-close-x" id="modal-close-x" aria-label="Close popup">&times;</button>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <div class="modal-buttons">
+        <button class="btn btn-secondary" id="modal-cancel">Close</button>
+        <button class="btn btn-primary" id="modal-open-link">Open Resource</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const cards = document.querySelectorAll('.resource-card');
+      const backdrop = document.getElementById('modal-backdrop');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDescription = document.getElementById('modal-description');
+      const btnOpenLink = document.getElementById('modal-open-link');
+      const btnCancel = document.getElementById('modal-cancel');
+      const btnCloseX = document.getElementById('modal-close-x');
+
+      let currentUrl = null;
+
+      function openModal(title, description, url) {
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        currentUrl = url;
+        backdrop.classList.add('active');
+      }
+
+      function closeModal() {
+        backdrop.classList.remove('active');
+        currentUrl = null;
+      }
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          const title = card.getAttribute('data-title');
+          const description = card.getAttribute('data-description');
+          const url = card.getAttribute('data-url');
+          openModal(title, description, url);
+        });
+      });
+
+      btnCancel.addEventListener('click', closeModal);
+      btnCloseX.addEventListener('click', closeModal);
+
+      btnOpenLink.addEventListener('click', () => {
+        if (currentUrl) {
+          window.open(currentUrl, '_blank', 'noopener');
+        }
+      });
+
+      backdrop.addEventListener('click', (e) => {
+        // close when clicking outside the modal
+        if (e.target === backdrop) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
