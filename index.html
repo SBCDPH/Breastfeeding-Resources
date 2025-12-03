@@ -290,11 +290,20 @@
       let currentUrl = null;
 
       function openModal(title, description, url) {
-        modalTitle.textContent = title;
-        modalDescription.textContent = description;
-        currentUrl = url;
-        backdrop.classList.add('active');
-      }
+  modalTitle.textContent = title;
+  modalDescription.textContent = description;
+  currentUrl = url && url.trim() !== "" ? url : null;
+
+  // Show or hide the "Open Resource" button based on whether a URL exists
+  if (currentUrl) {
+    btnOpenLink.style.display = "inline-block";
+  } else {
+    btnOpenLink.style.display = "none";
+  }
+
+  backdrop.classList.add('active');
+}
+
 
       function closeModal() {
         backdrop.classList.remove('active');
@@ -336,4 +345,5 @@
 </body>
 
 </html>
+
 
