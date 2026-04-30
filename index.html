@@ -4,51 +4,8 @@
   <meta charset="UTF-8" />
   <title>Breastfeeding Rights & Pumping Resources</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
-    .card {
-
-    background-color: #fff;
-
-    border-radius: 16px; /* Softer, more modern corners */
-
-    padding: 40px;      /* Significant padding for a high-end feel */
-
-    min-height: 320px;  /* Forces the cards to take up more vertical space */
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center; /* Vertically centers content in the tall card */
-
-    transition: all 0.3s ease;
-
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Softer shadow */
-
-}
-
-.card h3 {
-
-    font-size: 1.6rem;   /* Larger, bolder headers */
-
-    margin-bottom: 15px;
-
-    color: #003366;      /* Professional deep blue */
-}
-.card p {
-
-    font-size: 1.1rem;   /* Slightly larger body text for readability */
-    line-height: 1.6;
-    margin: 0;
-}
-    .grid-container {
-    display: grid;
-    /* Increase the 300px to 350px to make cards beefier */
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 60px auto; /* More breathing room from the title above */
-}
     body {
       margin: 0;
       padding: 40px 20px;
@@ -77,18 +34,20 @@
       line-height: 1.4;
     }
 
+    /* Card Grid */
     .card-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
+      gap: 20px; /* smaller gap for less spacing between items */
     }
 
+    /* Resource Buttons */
     .resource-card {
       border: none;
-      border-radius: 12px;
-      padding: 20px;
-      max-width: 280px;
+      border-radius: 16px;
+      padding: 30px;               /* bigger buttons */
+      max-width: 330px;            /* wider buttons */
       width: 100%;
       text-align: left;
       cursor: pointer;
@@ -99,33 +58,7 @@
       justify-content: flex-start;
       transition: transform 0.1s ease, box-shadow 0.1s ease;
       font: inherit;
-    }
-.resource-card {
-  border: none;
-  border-radius: 16px;
-  padding: 28px;/*INCREASED padding=bigger button*/max-width: 320px;/*INCREASED width*/width: 100%;
-  text-align: left;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  color: #002D72;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  transition: transform 0.1s ease,box-shadow 0.1s ease;
-  font: inherit;
-  margin-bottom: 10px;/*REDUCED spacing under cards*/}
-
-.resource-card h3 {
-  margin: 0 0 10px 0;
-  font-size: 20px;/*Slightly bigger text*/}
-
-.resource-card p {
-  margin: 0;
-  font-size: 16px;/*Slightly bigger text*/line-height: 1.4;
-}
-    .resource-card:focus-visible {
-      outline: 3px solid #002D72;
-      outline-offset: 2px;
+      margin-bottom: 5px;          /* less space below each button */
     }
 
     .resource-card:hover {
@@ -134,17 +67,17 @@
     }
 
     .resource-card h3 {
-      margin: 0 0 8px 0;
-      font-size: 18px;
+      margin: 0 0 10px 0;
+      font-size: 20px;
     }
 
     .resource-card p {
       margin: 0;
-      font-size: 14px;
-      line-height: 1.4;
+      font-size: 15px;
+      line-height: 1.5;
     }
 
-    /* Individual card background colors */
+    /* Individual colors */
     .bg-cdph { background-color: #F8B8B8; }
     .bg-dol { background-color: #FFDFA6; }
     .bg-nih { background-color: #C9E7E7; }
@@ -152,7 +85,7 @@
     .bg-wic-pdf { background-color: #D8C6F0; }
     .bg-myfamily { background-color: #FAD6B8; }
 
-    /* Modal styles */
+    /* Modal */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -172,22 +105,21 @@
       border-radius: 16px;
       max-width: 500px;
       width: 90%;
-      padding: 24px 24px 20px;
+      padding: 24px;
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
       color: #002D72;
       position: relative;
     }
 
-    .modal h2 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 22px;
-    }
-
-    .modal p {
-      margin: 0 0 18px 0;
-      font-size: 15px;
-      line-height: 1.5;
+    .modal-close-x {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #666;
     }
 
     .modal-buttons {
@@ -202,7 +134,6 @@
       border: none;
       font-size: 14px;
       cursor: pointer;
-      font-family: inherit;
     }
 
     .btn-secondary {
@@ -215,118 +146,71 @@
       color: #FFFFFF;
     }
 
-    .btn-secondary:hover {
-      background: #D4D4D4;
-    }
-
-    .btn-primary:hover {
-      background: #001947;
-    }
-
-    .modal-close-x {
-      position: absolute;
-      top: 10px;
-      right: 14px;
-      background: none;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      color: #666666;
-    }
-
-    .modal-close-x:hover {
-      color: #000000;
-    }
-
     @media (max-width: 700px) {
-      body {
-        padding: 20px 10px;
-      }
-      h1 {
-        font-size: 24px;
-      }
-      .subtitle {
-        font-size: 14px;
-      }
+      body { padding: 20px 10px; }
+      h1 { font-size: 24px; }
+      .subtitle { font-size: 14px; }
     }
   </style>
 </head>
-<body>
 
+<body>
+  <div class="page-wrapper">
     <div class="card-grid">
-      <!-- CDPH -->
-      <button
-        class="resource-card bg-cdph"
+
+      <button class="resource-card bg-cdph"
         data-title="Lactation Accommodations"
         data-description="California Department of Public Health Guidance on workplace lactation accommodations and employer responsibilities."
-        data-url="https://www.cdph.ca.gov/Programs/CFH/DMCAH/Breastfeeding/Pages/Lactation-Accommodation-Laws.aspx"
-      >
+        data-url="https://www.cdph.ca.gov/Programs/CFH/DMCAH/Breastfeeding/Pages/Lactation-Accommodation-Laws.aspx">
         <h3>Lactation Accommodations</h3>
-        <p>California Department of Public Health Guidance on workplace lactation accommodations and employer responsibilities.</p>
+        <p>California Department of Public Health guidance on workplace lactation accommodations.</p>
       </button>
 
-      <!-- U.S. DOL -->
-      <button
-        class="resource-card bg-dol"
+      <button class="resource-card bg-dol"
         data-title="PUMP Act"
         data-description="Federal law details employee break time, privacy, and employer requirements under the PUMP Act."
-        data-url="https://www.dol.gov/agencies/whd/fact-sheets/73-flsa-break-time-nursing-mothers"
-      >
+        data-url="https://www.dol.gov/agencies/whd/fact-sheets/73-flsa-break-time-nursing-mothers">
         <h3>PUMP Act</h3>
-        <p>Protections for pumping at work, including break time, privacy, and employer responsibilities.</p>
+        <p>Protections for pumping at work, including break time and privacy.</p>
       </button>
 
-      <!-- Breastfeeding in Public -->
-<button
-  class="resource-card bg-nih"
-  data-title="Breastfeeding in Public"
-  data-description="The California Civil Code, CIV 43.3, protects a mother's right to breastfeed in public and private settings."
-  data-url="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=43.3"
->
-  <h3>Breastfeeding in Public </h3>
-  <p>Learn about protections for breastfeeding in public and private settings.</p>
-</button>
+      <button class="resource-card bg-nih"
+        data-title="Breastfeeding in Public"
+        data-description="California Civil Code (CIV 43.3) protects the right to breastfeed in public and private settings."
+        data-url="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=43.3">
+        <h3>Breastfeeding in Public</h3>
+        <p>Learn about protections for breastfeeding in public and private settings.</p>
+      </button>
 
-      <!-- Returning to Work & Breastfeeding -->
-<button
-  class="resource-card bg-wic-pdf"
-  data-title="Returning to Work and Breastfeeding"
-  data-description="The CDC provides practical guidance to help parents continue breastfeeding after returning to work, including tips for pumping, safe milk storage, managing schedules, and understanding workplace rights and accommodations."
-  data-url="https://www.cdc.gov/breastfeeding/features/returning-to-work-and-breastfeeding.html"
->
-  <h3>Returning to Work & Breastfeeding</h3>
-  <p>Practical guidance for parents returning to work who wish to continue breastfeeding.</p>
-</button>
+      <button class="resource-card bg-wic-pdf"
+        data-title="Returning to Work and Breastfeeding"
+        data-description="CDC guidance to help parents continue breastfeeding after returning to work."
+        data-url="https://www.cdc.gov/breastfeeding/features/returning-to-work-and-breastfeeding.html">
+        <h3>Returning to Work & Breastfeeding</h3>
+        <p>Practical CDC guidance for balancing work and breastfeeding.</p>
+      </button>
 
-      <!-- WIC Pumps -->
-      <button
-        class="resource-card bg-wic-pumps"
+      <button class="resource-card bg-wic-pumps"
         data-title="WIC – Breast Pump Program"
-        data-description="San Bernardino County WIC program details on free and loaner breast pumps available for participants."
-        data-url="https://wic.sbcounty.gov/breastfeeding/breastpumps/"
-      >
+        data-description="Information on free and loaner breast pumps available through San Bernardino County WIC."
+        data-url="https://wic.sbcounty.gov/breastfeeding/breastpumps/">
         <h3>WIC – Breast Pump Program</h3>
-        <p>Learn about free and loaner breast pumps available through San Bernardino County WIC.</p>
+        <p>Learn about free and loaner pumps through SBC WIC.</p>
       </button>
 
-
-
-
-      <!-- MyFamily WIC -->
-      <button
-        class="resource-card bg-myfamily"
+      <button class="resource-card bg-myfamily"
         data-title="MyFamily WIC Breastfeeding Support"
-        data-description="California WIC’s breastfeeding support and education page with resources for families and caregivers."
-        data-url="https://myfamily.wic.ca.gov/NutritionHealth/BreastfeedingSupport"
-      >
+        data-description="California WIC’s breastfeeding support and resources."
+        data-url="https://myfamily.wic.ca.gov/NutritionHealth/BreastfeedingSupport">
         <h3>MyFamily WIC Support</h3>
-        <p>Explore California WIC breastfeeding education, videos, and support resources for families.</p>
+        <p>Explore California WIC breastfeeding education and resources.</p>
       </button>
+
     </div>
   </div>
 
   <!-- Modal -->
-  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true">
     <div class="modal">
       <button class="modal-close-x" id="modal-close-x" aria-label="Close popup">&times;</button>
       <h2 id="modal-title"></h2>
@@ -351,20 +235,12 @@
       let currentUrl = null;
 
       function openModal(title, description, url) {
-  modalTitle.textContent = title;
-  modalDescription.textContent = description;
-  currentUrl = url && url.trim() !== "" ? url : null;
-
-  // Show or hide the "Open Resource" button based on whether a URL exists
-  if (currentUrl) {
-    btnOpenLink.style.display = "inline-block";
-  } else {
-    btnOpenLink.style.display = "none";
-  }
-
-  backdrop.classList.add('active');
-}
-
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        currentUrl = url && url.trim() !== "" ? url : null;
+        btnOpenLink.style.display = currentUrl ? "inline-block" : "none";
+        backdrop.classList.add('active');
+      }
 
       function closeModal() {
         backdrop.classList.remove('active');
@@ -373,38 +249,22 @@
 
       cards.forEach(card => {
         card.addEventListener('click', () => {
-          const title = card.getAttribute('data-title');
-          const description = card.getAttribute('data-description');
-          const url = card.getAttribute('data-url');
-          openModal(title, description, url);
+          openModal(
+            card.getAttribute('data-title'),
+            card.getAttribute('data-description'),
+            card.getAttribute('data-url')
+          );
         });
       });
 
       btnCancel.addEventListener('click', closeModal);
       btnCloseX.addEventListener('click', closeModal);
-
-      btnOpenLink.addEventListener('click', () => {
-        if (currentUrl) {
-          window.open(currentUrl, '_blank', 'noopener');
-        }
-      });
-
-      backdrop.addEventListener('click', (e) => {
-        // close when clicking outside the modal
-        if (e.target === backdrop) {
-          closeModal();
-        }
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          closeModal();
-        }
-      });
+      btnOpenLink.addEventListener('click', () => currentUrl && window.open(currentUrl, '_blank'));
+      backdrop.addEventListener('click', e => e.target === backdrop && closeModal());
+      document.addEventListener('keydown', e => e.key === 'Escape' && closeModal());
     })();
   </script>
 </body>
-
 </html>
 
 
