@@ -14,6 +14,7 @@
       color: #131940;
       display: flex;
       justify-content: center;
+      font-size: 18px; /* Base font larger */
     }
 
     .page-wrapper {
@@ -24,13 +25,13 @@
     h1 {
       text-align: center;
       margin-bottom: 10px;
-      font-size: 32px;
+      font-size: 36px; /* Bigger title */
     }
 
     .subtitle {
       text-align: center;
       margin-bottom: 40px;
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.4;
     }
 
@@ -39,15 +40,15 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px; /* smaller gap for less spacing between items */
+      gap: 20px; /* Smaller gap */
     }
 
     /* Resource Buttons */
     .resource-card {
       border: none;
-      border-radius: 16px;
-      padding: 30px;               /* bigger buttons */
-      max-width: 330px;            /* wider buttons */
+      border-radius: 18px;
+      padding: 36px; /* Bigger buttons */
+      max-width: 350px;
       width: 100%;
       text-align: left;
       cursor: pointer;
@@ -58,7 +59,8 @@
       justify-content: flex-start;
       transition: transform 0.1s ease, box-shadow 0.1s ease;
       font: inherit;
-      margin-bottom: 5px;          /* less space below each button */
+      margin-bottom: 5px; /* Less spacing under */
+      font-size: 18px; /* Bigger text */
     }
 
     .resource-card:hover {
@@ -67,14 +69,15 @@
     }
 
     .resource-card h3 {
-      margin: 0 0 10px 0;
-      font-size: 20px;
+      margin: 0 0 14px 0;
+      font-size: 24px; /* Bigger titles */
+      font-weight: 700;
     }
 
     .resource-card p {
       margin: 0;
-      font-size: 15px;
-      line-height: 1.5;
+      font-size: 18px;
+      line-height: 1.55;
     }
 
     /* Individual colors */
@@ -105,10 +108,23 @@
       border-radius: 16px;
       max-width: 500px;
       width: 90%;
-      padding: 24px;
+      padding: 28px;
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
       color: #002D72;
       position: relative;
+      font-size: 18px;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 26px;
+    }
+
+    .modal p {
+      margin: 0 0 20px 0;
+      font-size: 18px;
+      line-height: 1.6;
     }
 
     .modal-close-x {
@@ -117,7 +133,7 @@
       right: 14px;
       background: none;
       border: none;
-      font-size: 20px;
+      font-size: 28px;
       cursor: pointer;
       color: #666;
     }
@@ -125,15 +141,16 @@
     .modal-buttons {
       display: flex;
       justify-content: flex-end;
-      gap: 10px;
+      gap: 14px;
     }
 
     .btn {
       border-radius: 999px;
-      padding: 8px 18px;
+      padding: 12px 26px;
       border: none;
-      font-size: 14px;
+      font-size: 18px; /* Bigger buttons */
       cursor: pointer;
+      font-family: inherit;
     }
 
     .btn-secondary {
@@ -147,9 +164,11 @@
     }
 
     @media (max-width: 700px) {
-      body { padding: 20px 10px; }
-      h1 { font-size: 24px; }
-      .subtitle { font-size: 14px; }
+      body { padding: 20px 10px; font-size: 17px; }
+      h1 { font-size: 28px; }
+      .subtitle { font-size: 16px; }
+      .resource-card { font-size: 17px; padding: 30px; }
+      .resource-card h3 { font-size: 22px; }
     }
   </style>
 </head>
@@ -266,13 +285,5 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 
