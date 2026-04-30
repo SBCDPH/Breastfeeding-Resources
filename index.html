@@ -15,15 +15,11 @@
 
     min-height: 320px;  /* Forces the cards to take up more vertical space */
 
-    
-
     display: flex;
 
     flex-direction: column;
 
     justify-content: center; /* Vertically centers content in the tall card */
-
-    
 
     transition: all 0.3s ease;
 
@@ -40,19 +36,20 @@
     margin-bottom: 15px;
 
     color: #003366;      /* Professional deep blue */
-
 }
-
- 
-
 .card p {
 
     font-size: 1.1rem;   /* Slightly larger body text for readability */
-
     line-height: 1.6;
-
     margin: 0;
-
+}
+    .grid-container {
+    display: grid;
+    /* Increase the 300px to 350px to make cards beefier */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 60px auto; /* More breathing room from the title above */
 }
     body {
       margin: 0;
